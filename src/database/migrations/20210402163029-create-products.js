@@ -12,6 +12,17 @@ module.exports = {
 				type: Sequelize.STRING,
 			},
 			categoryId: {
+				type: Sequelize.INTEGER,
+				allowNull:false,
+				onDelete:'CASCADE',
+				onUpdate:'CASCADE',
+				reference: {
+					model:'categories',
+					key: "id",
+					as: "id",
+				},
+			},
+			imageUrl: {
 				type: Sequelize.STRING,
 			},
 			price: {
