@@ -5,11 +5,10 @@ const CheckUser = async (req, res, next) => {
 	const { users } = Models;
 	const found = await users.findOne({ where: { email } });
 	if (found) {
-		return res.status(400).json({
-			status: 400,
-			message: 'User with email already exists',
-		});
+		 req.user = found
+		 return next()
 	}
+   req.user = null
 	next();
 };
 
