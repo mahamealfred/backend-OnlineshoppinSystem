@@ -10,7 +10,7 @@ const isAdmin = async (req, res, next) => {
       message: "please login",
     });
   }
-  const payload = decode(Token);
+  const payload = await decode(Token);
   const { email } = payload;
 
   const found = await users.findOne({ where: { email } });

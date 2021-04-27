@@ -4,7 +4,7 @@ import categoriesController from '../controllers/category'
 import isAdmin from '../middleware/IsAdmin'
 
 route.post('/save',isAdmin ,categoriesController.createCategory);
-route.get('/',isAdmin , categoriesController.getCategories)
+route.get('/', categoriesController.getCategories)
 route.patch('/:id',isAdmin , categoriesController.updateProductCategory)
 route.delete('/:id',isAdmin , categoriesController.deleteProductCategory)
 route.get('/:id',isAdmin , categoriesController.OneCategory)

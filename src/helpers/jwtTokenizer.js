@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const encode =(claims) => {
-    const token =jwt.sign(claims,process.env.JWT_SECRET, {expiresIn : '7d'});
+    const token =jwt.sign(claims,process.env.JWT_SECRET, {expiresIn : '8d'});
     return token;
 }
 
