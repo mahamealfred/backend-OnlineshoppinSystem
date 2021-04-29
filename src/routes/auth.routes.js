@@ -7,7 +7,7 @@ const route = Router();
 
 route.post('/signup', isAdmin,SignupValidator, CheckUser, authController.signup);
 route.post('/signin',CheckUser,authController.singin);
-route.get('/',isAdmin,authController.getAllUser);
+route.get('/',authController.getAllUser);
 route.get('/:id',authController.OneUser);
 route.delete('/:id',isAdmin,authController.deleteUser);
 
